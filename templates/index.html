@@ -83,16 +83,7 @@
         }
     </style>
     <br>
-    <div class="container" style="background-color: aqua; width: 20%;">
-        <h6 >FOOTBALL APİ</h6>
-        <p><strong>{{playername}}</strong></p>
-        <p><strong>{{playerkey}}</strong></p>
-        <p><strong>{{playernumber}}</strong></p>
-        <p><strong>{{playercountry}}</strong></p>
-        <p><strong>{{playerage}}</strong></p>
-        
-
-    </div>
+    
     <h6 class="text-center">EXCHANGE APİ</h6>
     <br>
 
@@ -157,53 +148,70 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <h6 class="text-center">WEATHER APİ</h6>
+    
+        
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h6 class="text-center">WEATHER APİ</h6>
         
             
-                {% for weather in weather_data %}
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image is-50x50">
-                            <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <div class="content">
-                            <p>
-                                <span class="title">{{ weather.city }}</span>
-                                <br>
-                                <span class="subtitle">{{ weather.temperature }}° F</span>
-                                <br> {{ weather.description }}
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            
-            {% endfor %}
-        
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-offset-4 is-4">
-                        <form method="POST">
-                            {% csrf_token %}
-                            <div class="field has-addons">
-                                <div class="control is-expanded">
-                                    {{ form.name }}
-                                </div>
-                                <div class="control">
-                                    <button class="button is-info">
-                                        Add City
-                                    </button>
+                        {% for weather in weather_data %}
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-50x50">
+                                    <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{ weather.city }}</span>
+                                        <br>
+                                        <span class="subtitle">{{ weather.temperature }}° F</span>
+                                        <br> {{ weather.description }}
+                                    </p>
                                 </div>
                             </div>
-                        </form>
+                        </article>
+                    
+                    {% endfor %}
+                
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-offset-4 is-4">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="field has-addons">
+                                        <div class="control is-expanded">
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="control">
+                                            <button class="button is-info">
+                                                Add City
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+                </div>
+                <div class="col">
+                    <div class="container" style="background-color: aqua; width: 20%;">
+                        <h6 >FOOTBALL APİ</h6>
+                        <p><strong>{{playername}}</strong></p>
+                        <p><strong>{{playerkey}}</strong></p>
+                        <p><strong>{{playernumber}}</strong></p>
+                        <p><strong>{{playercountry}}</strong></p>
+                        <p><strong>{{playerage}}</strong></p>
                     </div>
                 </div>
             </div>
-        </section>
-        
+        </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
